@@ -1,4 +1,4 @@
-export const PRODUCTS = "products";
+export const PRODUCTS = "http://localhost:3169/api/products";
 
 export type TypeProductData = {
   name: string;
@@ -9,7 +9,7 @@ export type TypeProductData = {
 };
 
 export type TypeProductDataFilters = {
-  sort: EnumProductSort;
+  sort?: EnumProductSort;
   searchTerm?: string;
   page?: string | number;
   perPage?: string | number;

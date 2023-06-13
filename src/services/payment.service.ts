@@ -1,7 +1,7 @@
 import { instance } from "@/api/api.intercepter";
 import { IPaymentResponse } from "@/types/payment.interface";
 
-const PAYMENT = "payment";
+const PAYMENT = "http://localhost:3169/api/payment";
 
 export const PaymentService = {
   async createPayment(amount: number) {

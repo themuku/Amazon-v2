@@ -1,7 +1,8 @@
 import { instance } from "@/api/api.intercepter";
 import { IReview } from "@/types/review.interface";
+import axios from "axios";
 
-const STATISTICS = "statistics";
+const STATISTICS = "http://localhost:3169/api/statistics";
 
 export type TypeStatisticsResponse = {
   name: string;
@@ -10,9 +11,12 @@ export type TypeStatisticsResponse = {
 
 export const StatisticsService = {
   async getMain() {
-    return instance<TypeStatisticsResponse>({
+    return axios<TypeStatisticsResponse>({
       url: `${STATISTICS}/main`,
       method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
   },
 };

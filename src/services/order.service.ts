@@ -1,13 +1,17 @@
 import { instance } from "@/api/api.intercepter";
 import { IOrder } from "@/types/order.interface";
+import axios from "axios";
 
-const ORDERS = "orders";
+const ORDERS = "http://localhost:3169/api/orders";
 
 export const OrderService = {
   async getAll() {
-    return instance<IOrder[]>({
+    return axios<IOrder[]>({
       url: ORDERS,
       method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
   },
 };
